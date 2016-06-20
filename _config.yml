@@ -13,13 +13,13 @@ defaults:
     scope:
       path: "" # empty string for all files
     values:
-      title: npes87184's blog
+      title: Eric's blog
 
 description: Stylish Jekyll Theme
 author:
-  name: npes87184
-  email: npes87184@gmail.com
-  github: npes87184
+  name: Eric
+  email: dangerlover9403@gmail.com
+  github: 
   bio: Write the code. Change the world!
   email_md5: 38889316ad04896e9d2958947ef896cf
 
