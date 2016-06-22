@@ -1,6 +1,6 @@
 ---
 layout: post
-title: [面試題目] ReverseString
+title: C++ ReverseString
 categories: [技術]
 tags: [C++]
 image_description: true
