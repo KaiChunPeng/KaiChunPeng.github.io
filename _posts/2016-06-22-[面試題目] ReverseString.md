@@ -1,6 +1,6 @@
 ---
 layout: post
-title: C++ ReverseString
+title: [面試題目] ReverseString
 categories: [技術]
 tags: [C++]
 image_description: true
@@ -97,4 +97,4 @@ string reverseString (string s)
 如果我有寫錯的地方，或有更好更有趣的方法
 也歡迎寫信給我。
 
-dangerlover9403@gmail.com 
+ 
