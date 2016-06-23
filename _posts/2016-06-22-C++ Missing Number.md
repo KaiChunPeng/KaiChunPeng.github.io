@@ -2,7 +2,7 @@
 layout: post
 title: C++ Missing Number
 categories: [技術]
-tags: [C++][面試]
+tags: [C++]
 image_description: true
 description: 20160623 (四)
 comments: true
