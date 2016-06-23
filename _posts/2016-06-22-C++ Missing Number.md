@@ -56,14 +56,19 @@ int missingNumber(int* numb, int size)
 	既然講到這個 `vector` 我相信很多人會，但是應該也有許多人不會，更貼切的說應該是，有些人喜歡，有些人不喜歡....因為他有一種樣板味(?)..好了離題了Orz
 	
 	
+	
 `vector` (這部分會的朋友，請直接跳過)
     
 	vector 相當於陣列 ， 在建立vector時，我們通常會使用 <type>來表示型態，由於vector是使用 動態記憶體配置 ，所以可以用初始化的引數，來指出需要多少個element 。
 	
-	讓我們來看看[MSDN][MSDN-Path] 怎麼介紹  
+	
+	讓我們來看看[MSDN](https://msdn.microsoft.com/zh-tw/library/9xd04bzs.aspx) 怎麼介紹  
 
-[MSDN-Path]	:https://msdn.microsoft.com/zh-tw/library/9xd04bzs.aspx
-
+	
+	
+	
+	
+	
 {% highlight ruby %}
 
    template < 
@@ -77,8 +82,8 @@ int missingNumber(int* numb, int size)
 
 	這是他的寫法，不過我更喜歡，用最簡單最直接的方式來教學
 	
-	#include <vector> 				//Header !
-	using namespace std;			//這個建議大家不要用，之後會在有詳細介紹
+	#include <vector> //Header !
+	using namespace std;//這個建議大家不要用，之後會在有詳細介紹
 	
 	vector <int>FirstVector (5) ; 	//have 5 integers 
 
@@ -91,8 +96,39 @@ int missingNumber(int* numb, int size)
 ### 做事不能 : 知其然而不知其所以然 ..
 
 	一位程式界的先輩的座右銘，在這裡讓小弟引用一下，好了，廢話不多說，讓我們開始 re 一遍這一行吧 ! 
-	
 
+	
+	
+{% highlight ruby %}
+
+    vector <int>first
+
+1. 首先，我們會先進到 
+	explicit vector(size_type _Count) //size_type _Count = 5 ;
+		: _Mybase()
+		{	// construct from _Count * _Ty()
+		_Construct_n(_Count, _Ty());
+		}
+	
+	這個函數。
+	
+2. 	void _Construct_n(size_type _Count, const _Ty& _Val) //size_type = 5 , _Val = 0 
+		{	// construct from _Count * _Val
+		if (_Buy(_Count))----------------------------------------------->2.1
+			{	// nonzero, fill it
+			_TRY_BEGIN
+			_Mylast = _Ufill(_Myfirst, _Count, _Val);
+			_CATCH_ALL
+			_Tidy();
+			_RERAISE;
+			_CATCH_END
+			}
+		}
  
+ 
+ 
+ 
+ 
+ {% endhighlight %}	
 	
 	
