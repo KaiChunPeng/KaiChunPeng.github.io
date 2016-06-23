@@ -2,9 +2,9 @@
 layout: post
 title: C++ Missing Number
 categories: [技術]
-tags: [C++]
+tags: [C++][面試]
 image_description: true
-description: 20160622 (三)
+description: 20160623 (四)
 comments: true
 published: true
 ---
