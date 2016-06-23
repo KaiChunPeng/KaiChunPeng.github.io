@@ -231,3 +231,81 @@ _Fill_n(_CHECKED_BASE(_First), _Count, _Val
  {% endhighlight %}	
 	
 	
+	
+	
+    接下來，我們來簡單的使用它吧 ! 
+	
+{% highlight ruby %}
+	用法很簡單，就跟我們用array 一樣就行了
+	
+	vector <int> first (5) ; 
+	int n = first.size() ;   //int n = sizeof (first) / sizeof (first[0]) ; 
+	
+	for (int i = 0 ; i < n ; i++)
+	{
+		cin >> first[i] ; //input : 7 9 9 7 9 
+	}
+	
+	for (int i = 0 ; i < n ; i++)
+	{
+		cout << first[i] <<" " ; //output : 7 9 9 7 9 
+	}
+	
+ {% endhighlight %}	
+	
+
+
+    ※ 其實，我本來還想介紹iterator (迭代器) 和 STL (standard Template Library ) 的，不過這樣似乎離本文章越跑越遠去了，所以我就不在多介紹了。
+
+
+    
+	
+    還記得我們的題目嗎 ?
+	{% highlight ruby %}
+	Given nums = `[0, 1, 3] `return `2`.
+	{% endhighlight %}
+
+    接下來，我使用vector來呈現
+	
+
+	
+	
+	
+	
+{% highlight ruby %}
+	
+int missingNumber (vector <int> & x )
+{
+	int result = 0 ; 
+
+	for (int i = 0 ; i < x.size() ; i++)
+		result ^= x[i] ^ (i+1) ; 
+
+	return result ; 
+}
+	
+	
+	how can do it ?
+	
+	0 ^ 0 = 0
+	1 ^ 0 = 1 
+	0 ^ 1 = 1 
+	1 ^ 1 = 0
+	
+ {% endhighlight %}		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
