@@ -159,69 +159,71 @@ size_type max_size() const
 
 --------------------------------------------------	
  now , we back to 2.1
-	else
-	{	
-		
-		_Myfirst = this->_Alval.allocate(_Capacity); 
-		{
-			return (_Allocate(_Count, (pointer)0));
-			{
-				_Ty _FARQ *_Allocate(_SIZT _Count, _Ty _FARQ *)//_SIZT _Count = 5
-				{	// check for integer overflow
-					if (_Count <= 0)
-						_Count = 0;
-					else if (((_SIZT)(-1) / _Count) < sizeof (_Ty))
-						_THROW_NCEE(std::bad_alloc, NULL);
 
-					// allocate storage for _Count elements of type _Ty
-					return ((_Ty _FARQ *)::operator new(_Count * sizeof (_Ty)));
-					{
-						void *__CRTDECL operator new(size_t size) _THROW1(_STD bad_alloc)
-						{
-							void *p;
-							while ((p = malloc(size)) == 0) //size = 20
-							if (_callnewh(size) == 0)
-							{       // report no memory
-								static const std::bad_alloc nomem;
-								_RAISE(nomem);
-							}
+ else
+{	
+	_Myfirst = this->_Alval.allocate(_Capacity); 
+	{
+		return (_Allocate(_Count, (pointer)0));
+{
+	_Ty _FARQ *_Allocate(_SIZT _Count, _Ty _FARQ *)//_SIZT _Count = 5
+	{	// check for integer overflow
+		if (_Count <= 0)
+			_Count = 0;
+		else if (((_SIZT)(-1) / _Count) < sizeof (_Ty))
+			_THROW_NCEE(std::bad_alloc, NULL);
 
-							return (p);
-						}
-					}
-				}
-			
-			}
-		}
-		//now : _Myfirst have memory location
-			_Mylast = _Myfirst;
-			_Myend = _Myfirst + _Capacity;
+			// allocate storage for _Count elements of type _Ty
+		return ((_Ty _FARQ *)::operator new(_Count * sizeof (_Ty)));
 	}
+}		
+{
+	void *__CRTDECL operator new(size_t size) _THROW1(_STD bad_alloc)
+	{
+		void *p;
+		while ((p = malloc(size)) == 0) //size = 20
+		if (_callnewh(size) == 0)
+		{       // report no memory
+			static const std::bad_alloc nomem;
+				_RAISE(nomem);
+		}
+
+		return (p);
+	}
+}
+				
+			
+			
+	}
+	//now : _Myfirst have memory location
+	_Mylast = _Myfirst;
+	_Myend = _Myfirst + _Capacity;
+}
  
  
  
- 回到 2. void _Construct_n (size_type _Count  //5
+ 回到 
+ 2. void _Construct_n (size_type _Count  //5
 							, const _Ty& _Val //0)
-		{
-		if (_Buy(_Count))
-			{	// nonzero, fill it
-			_TRY_BEGIN
-			_Mylast = _Ufill(_Myfirst, _Count, _Val); 
-			//_Myfirst 這個我們剛剛有看到，已經擁有了memory location了
-			_CATCH_ALL
-			_Tidy();
-			_RERAISE;
-			_CATCH_END
-			}
+{
+	if (_Buy(_Count))
+	{	// nonzero, fill it
+		_TRY_BEGIN
+		_Mylast = _Ufill(_Myfirst, _Count, _Val); 
+		//_Myfirst 這個我們剛剛有看到，已經擁有了memory location了
+		_CATCH_ALL
+		_Tidy();
+		_RERAISE;
+		_CATCH_END
+	}
 		
-		有趣的是，是在_Ufill 裡面有一個_Fill_n()這個function 會把element放進去
-		_Fill_n(_CHECKED_BASE(_First), _Count, _Val
-		{
-			for (; 0 < _Count; --_Count, ++_First)
-			*_First = _Val;
-		}
-		
-		}
+有趣的是，是在_Ufill 裡面有一個_Fill_n()這個function 會把element放進去
+_Fill_n(_CHECKED_BASE(_First), _Count, _Val
+{
+	for (; 0 < _Count; --_Count, ++_First)
+		*_First = _Val;
+}
+
 		
 	然後，我們就可以看到 vector <int>first = first[5] (0,0,0,0,0) 了
  
